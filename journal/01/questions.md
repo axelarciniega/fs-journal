@@ -9,10 +9,10 @@
     > | ANSWER HERE |
 
 04. What is ***specificity*** and how might you use it to your benefit?
-    > | ANSWER HERE |
+    > Specificity is built into CSS to determine which of the rules are going to be applied in the chance that multiple rules are targeting both same element and property. You can use it to your benefit if you want a specific color or property to be a certain way.
 
 05. What problems do you think you could run into if you over-utilized the `!important` feature?
-    > | ANSWER HERE |
+    > A result of over-utilizing the important feature can come back to an error. I believe that if theres more than one if can make the project look all funky or not know which one to use.
 
 06. What are the three components that makeup a `CSS` rule? <br> Example:
 
@@ -22,10 +22,10 @@
         }
     ```
 
-    > | ANSWER HERE |
+    > Three components that make up a CSS rule are selectors, property, and value.
 
 07. How do you think good design influences people when visiting a website, and what sorts of things could you convey through design alone?
-    > | ANSWER HERE |
+    > In my opinion, I believe that a good website influences people to stay on and it keep on interacting with the website. Some of the things I would convey through the design is making it easy to access and also able to read without struggling. Also making it look nice and organized would be very helpful.
 
 08. What is the purpose of ***wireframing***?
     > | ANSWER HERE |
