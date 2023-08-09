@@ -34,7 +34,7 @@
     > | ANSWER HERE |
 
 10. Define the display `:flex property:`
-    > | ANSWER HERE |
+    > flex property is able to move objects
 
 11. What `CSS` properties affect the size of a box model?
     > | ANSWER HERE |
