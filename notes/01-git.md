@@ -50,7 +50,7 @@ link:b5 will you give bootstrap  (your style sheet should come after your extern
 
 rows and columns exists in containers, container fluid wraps all the way to the end
 
-started off with creating a section(row), put a div in the section(column or col), adding another div created 50 50 split on row oe even use a number on a div from 1-12 depending on how large you want it
+started off with creating a section(row), put a div(column or col) in the section, adding another div created 50 50 split on row oe even use a number on a div from 1-12 depending on how large you want it
 
 bg primary is a blue color
 
@@ -82,3 +82,42 @@ Ex: order-2 order-md-1
 
 order-first, arranges it be first or top
 order-last
+
+
+8/10 
+    EX:     :root{
+        --green: 11d200;
+    }
+
+    parent have position: relative
+    children have position: absolute
+
+    rounded = border radius
+    background-size:
+    background-position
+    style:debug
+   text-center 
+   text-align
+   justify-content: moves things left to right
+   align-content: moving things up and down 
+   margin: adds space around
+   when dealing with rows, use align-items
+
+d-md-block = use for blocking things in small screens
+
+
+EX: think about mobile first
+@media(min-width:768px){
+    .hero-row{
+        background-image: url()
+    }
+}
+
+@media(max-width:768px){
+    .class{
+        background-image: url()
+    }
+}
+
+sticky-top = applies position fix, can be used for header. For example can use on a nav bar 
+
