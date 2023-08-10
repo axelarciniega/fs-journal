@@ -6,7 +6,7 @@
     > to create a new folder or directory
 
 03. What is a ***pseudo-class*** and what are some of the most common ones you think you will use?
-    > | ANSWER HERE |
+    > A psuedo-class is a selector that is able to define a special state of an html element. Some commons one that I think we will see are :after & before, :hover, and :first-child
 
 04. What is ***specificity*** and how might you use it to your benefit?
     > Specificity is built into CSS to determine which of the rules are going to be applied in the chance that multiple rules are targeting both same element and property. You can use it to your benefit if you want a specific color or property to be a certain way.
@@ -28,13 +28,13 @@
     > In my opinion, I believe that a good website influences people to stay on and it keep on interacting with the website. Some of the things I would convey through the design is making it easy to access and also able to read without struggling. Also making it look nice and organized would be very helpful.
 
 08. What is the purpose of ***wireframing***?
-    > | ANSWER HERE |
+    > Purpose of wireframing keeps the concept user-focused, clarify and define website features. They are quick and cheap to create.
 
 09. Do you think wireframes are worth the time, energy, and effort that they require? Why or Why not?
-    > | ANSWER HERE |
+    > I believe that it is worth the time and effort due to the fact that it will help with planning of the webpage. This can help when the time comes to create the webpage, it'll make things flow nicely and also be organized.
 
 10. Define the display `:flex property:`
-    > flex property is able to move objects
+    > flex property is able to move objects. It's main principle is to make layouts flexible and intuitive.
 
 11. What `CSS` properties affect the size of a box model?
-    > | ANSWER HERE |
+    > The width and height properties affect the size of a box model
