@@ -40,7 +40,7 @@
 
     > let time = 11;
 
-    if(time >+ 12){
+    if(time >= 12){
         console.log("Good morning")
     }
 
