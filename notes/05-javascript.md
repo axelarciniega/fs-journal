@@ -232,3 +232,31 @@ function removeSandwich(sandwichName){
 
     drawCart()
 }
+
+
+
+<!-- ANCHOR 8/17  -->
+
+ function decreaseOsloHunger(){
+    let oslo = animals.find(animal => animal.name == 'oslo')
+    oslo.hunger--
+
+    if(oslo.hunger = 0) oslo.hunger = 0
+    console.log(oslo)
+ }
+
+
+function feedOslo(){
+    let oslo = animals.find(animal => animal.name == 'oslo')
+    oslo.hunger++ 
+    if(oslo.hunger >= 100) oslo.hunger = 100
+}
+
+
+
+1000 miliseconds = 1 second  
+
+ setInterval(decreaseOsloHunger,1000)
+
+
+

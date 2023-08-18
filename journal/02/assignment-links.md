@@ -3,4 +3,4 @@
 * **[Repo](https://github.com/axelarciniega/jsDayOne)**
 * **[Repo](https://github.com/axelarciniega/vampGame)**
 * **[Repo](https://github.com/axelarciniega/iceCreamParlor)**
-* **[Repo](https://github.com/AxelArciniega/<ASSIGNMENT_REPO>)**
+* **[Repo](https://github.com/axelarciniega/partnerGame)**
