@@ -179,3 +179,8 @@ async deleteCar(carId){
 }
 
 18. invoke _saveCars in deleteCar so that when you delete its made sure its deleted from local storage
+
+
+
+<!-- SECTION  8/24-->
+this.reportedDate = data.reportedDate ? new Date(data.reportedDate)

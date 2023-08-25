@@ -5,7 +5,7 @@
 
 02. How does `export` differ from `export default`?
   
-  > Export differ from Export Default due to the fact that Export is ysed to export values from a module, which you must specify for that value. Export default on the other hand is used to export a single value , which does not need to have a specific name.
+  > Export differs from Export Default due to the fact that Export is used to export values from a module, which you must specify for that value. Export default on the other hand is used to export a single value , which does not need to have a specific name.
 
 03. What is Encapsulation?
   
@@ -21,11 +21,11 @@
 
 06. What is a computed Property?
   
-  > Computed property is a property that calculates, which are used to generate or a calculate a value based on the other properties or data
+  > Computed property is a property that calculates, which are used to generate or to calculate a value based on the other properties or data
 
 07. What is the purpose of the `MVC` pattern?
   
-  > The purpose of the MVC pattern is to help build well-structured and maintainable applications.
+  > The purpose of the MVC pattern is to help build well-structured and maintainable applications. It is also very helpful with keeping things organized.
 
 08. What is the job of the `Controller` in the `MVC` Pattern?
   
