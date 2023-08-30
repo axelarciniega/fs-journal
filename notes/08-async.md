@@ -1,5 +1,5 @@
 # Async
-
+<!-- SECTION 8/29 -->
 
 when you do bcw create use mvc-auth
 
@@ -70,3 +70,80 @@ async getCars(){
 in env.js 
 
 export const domain = 'put the one with domain here '
+
+
+<!-- SECTION 8/30 -->
+1. started off by creating a service file
+ const dndapi = axios.create({
+    baseURL:
+    timeout: 5000
+ })
+
+ class DndSpellsService{
+    async getSpells(){
+        const res = await dndapi.get('spells')
+        <!-- NOTE make sure you console log this bad boy -->
+        console.log('GOT SPELLS', res.data)
+    }
+ }
+
+ 2. from there he made a controller 
+ in the controller 
+  
+export class DndSpellsController{
+    constructor(){
+
+    }
+
+    async getSpells(){
+        try{
+            await
+        }
+    }
+
+
+
+}
+
+
+3. created a model
+in model 
+
+export class Dnd{
+    constructor(data){
+        this.name = data.name
+        this.description = data.description
+        etc
+    }
+
+}
+
+4. went to appstate to create spell list 
+
+5. in the service 
+
+appstate.spellList = res.data.results
+
+
+6. in controller 
+made a _drawSpellList()
+
+7. in the spell.js
+
+static SpellListTemplate(spell){
+    return `
+        this is now where our template will go now   
+    `
+}
+
+from here put in += Spell.SpellListTemplate(s) in the controller that draws the function
+
+
+8. In the controller made a function
+async getOneSpell(
+)
+
+9. go to the service and make that same one
+async getOneSpell(index) //do not forget the index {
+    const res = await dndapi.get(`spells/${index}) //this is coming from the api page, look at the url!
+}
