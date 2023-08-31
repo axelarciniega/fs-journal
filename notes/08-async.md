@@ -181,3 +181,21 @@ activeSpell = null
 
  15. in the sand service 
  saveSpell()
+
+
+
+ <!-- SECTION 8/31-->
+
+querys start with a question mark, then it goes into the parameter. then the last part will be the value        
+
+const nasaApi = axios.create({
+    baseURL: https://api.nasa.gov/plantetary/apod
+})
+
+this is one way to do it
+await nasaApi.get('?api_key=blah')       //api key goes in the quotes
+
+Another way to do it, this would be helpful for more parameters
+params:{
+    'api_key':''    //take the key and value and puts it together
+}
