@@ -112,7 +112,8 @@ in model
 export class Dnd{
     constructor(data){
         this.name = data.name
-        this.description = data.description
+        this.description = data.description || data.desc.join('\n\n')       // \n means new line
+        this.damage = data.damage ? data.damage.damage_type ? data.damage.damage_type.name : data.damage : 'n/a '
         etc
     }
 
@@ -147,3 +148,36 @@ async getOneSpell(
 async getOneSpell(index) //do not forget the index {
     const res = await dndapi.get(`spells/${index}) //this is coming from the api page, look at the url!
 }
+
+10. in the appstate 
+
+/**@type{spell} */
+activeSpell = null
+
+11. go to the service and in the getOneSpell
+ appstate.activeSpell
+
+
+ 12. go to the controller and make a function 
+ _drawActiveSpell(){
+    let activeSpell = appstate.activeSpell
+    let activeContent = ''
+    setHTML('active-spell', activeSpell.activeTemplate)
+    
+ }
+
+ 13. make a getter in the spell.js and DO NOT forget to adjust the router
+
+ in static spellListTemplate
+ add 
+ get 
+ 
+ activeTemplate
+
+ 14. create a new controller and new service for just the sandbox
+ in the controller
+
+ async saveSpell(){}
+
+ 15. in the sand service 
+ saveSpell()
