@@ -131,7 +131,7 @@ removeCar(carId){
  <!-- SECTION 9/6 -->
  in the env, you can put your data base in the connection string`
 
- can comment out in the utils/start up line between 22 and 26 then run the server to make sure it is successful
+ can comment out in the start up line between 22 and 26 then run the server to make sure it is successful
 
 DO NOT forget about your dbContext, will help with mongoose  
 
@@ -142,7 +142,7 @@ DO NOT forget about your dbContext, will help with mongoose
 
  3. in the controller set up the constructor with the super
  constructor(){
-    supero('api/exhibits')
+    super('api/exhibits')
     this.router
         .post('', this.createExhibit)
  }
@@ -216,5 +216,100 @@ in the postman the format for sending information
 
 
     20. created getAninmalsByExhibitId()
+
+    21. in the exhibit controller we are creating a put('/:exhibitId', this.editExhibit)
+
+    22. in the exhibit service we are throwing a null check
+    if(!originalExhibit) throw new Error('unable to find exhibit at ${exhibitId}')
+
+
+
+    <!-- SECTION 9/7 -->
+
+    bcw create= use the express-mvc
+
+    click 'open workspace' to get both projects
+
+    Put your domain, audience and Id in the Env, and DO not forget the connection string
+    ALSO in your client env we need these domain etc
+
+    After starting our server and logging in, we should have the token, user info and account
+
+
+    1. started off by deleting value which is just there as an example in the server
+
+this is all in the server side
+    2.then created a bird model = schema
+    -after the curly bracket
+    {timestamps: true, toJSON:{virtuals:true}}
+
+
+    3. then started to create a controller and service
+    did a createBird 
+    DO NOT forget about await newBird.populate('reporter')  //reporter is coming from the model!
+
+<!-- ANCHOR in the preview copy the access token then go to post man, authorization, bearer token, and then paste the token -->
+
+
+    4. created this in the birder controller
+    .use((request, response, next) => {
+        logger.log('middle ware')
+        request
+        next()
+    })
+
+        .use(Auth0Provider.getAuthorizedUserInfo)
+
+
+    5. in the createBird()
+    body.reporterId = req.userInfo.id 
+
+    6. now we are creating a getBird() in the bird controller
+    If you move the get(''this.getBird) above the use(auth0) you can get the request without logging in.
+
+
+    7. created get('/bitdId', this.getBirdByid) in the bird controller
+
+
+
+/
+    8. start creating birdWatcher controller, service and model
+
+    9. in the birdwatcher model 
+    new Schema ({
+        accountId: {type: Schema.Types.ObjectId, required true, ref: 'Account'},
+    })
+
+/
+    10. in the BirdWatcher controller we created a post
+    before our POST we do our .use(Ath0)
+    and we are doing a createBirdWatcher
+
+    11. in our birdwatcher service DO NOT forget to - await populate both!
+    await watcher.populate('profile', '-email')  OR
+    await watcher.populate('bird profile', 'name picture')
+
+
+/
+    12. now in the 'bird controller' we are creating a get
+    .get('/birdId/birdWatchers', getBirdwatchers)
+
+
+    13. in the birdWatcher controller we are creating a delete 
+    .delete('/:birdWatcherId', this.removeBirdWatcher)
+
+
+    <!-- TODO run 'npm i' after cloning a project down -->
+
+<!-- ANCHOR -->
+NOW starting the client side/front end
+14. started of by creating a birdsController, birds service and model
+started writing a getBirds function
+
+15. after making sure we got some birds on the log we can start building our model
+
+16. going to appstate now to store some birds with an empty array 
+
+17.
 
 
