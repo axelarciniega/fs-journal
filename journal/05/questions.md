@@ -9,7 +9,7 @@
 
 03. What does `ORM` stand for? Which `ORM` do we use when interacting with MongoDB
 
-  > ORM stands for object relational mapping, the ORM that we use when interacting with MongoDB
+  > ORM stands for object relational mapping, the ORM that we use when interacting with MongoDB mongoose
 
 04. Which two `HTTP` request types include a body?
 
