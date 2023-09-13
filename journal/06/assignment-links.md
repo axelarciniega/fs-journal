@@ -2,5 +2,5 @@
 
 * **[Repo](https://github.com/axelarciniega/vue-playground)**
 * **[Repo](https://github.com/axelarciniega/giftedVue)**
-* **[Repo](https://github.com/AxelArciniega/<ASSIGNMENT_REPO>)**
+* **[Repo](https://github.com/axelarciniega/gregsListVue)**
 * **[Repo](https://github.com/AxelArciniega/<ASSIGNMENT_REPO>)**
