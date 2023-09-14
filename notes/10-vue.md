@@ -277,3 +277,34 @@ router.push({name: 'Car details', params: {carId: newCar.Id} })
 
 
 25. now focusing on deleting the cars
+
+
+
+
+<!-- SECTION 9/14 -->
+
+
+in the project card 
+
+setup(props){
+    return{
+        projectCover: computed(() => `url(${props.project.coverImg})` )
+    }
+}
+
+1. created a component modalWrapper.vue
+we have our slot inside of our body in the module, but you can also have them in the header and footer
+
+2. in the app.vue
+put the modulwrapper //NOTE we can use the modul in different places using the different id's
+
+<ModulWrapper>
+    Hey what up     //NOTE when you open the modul that message will pop up
+</ModulWrapper>
+
+
+3. in the account page
+
+watcheffect(() => {
+
+})
