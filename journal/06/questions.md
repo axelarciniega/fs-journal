@@ -35,12 +35,7 @@
 
   Props are how we pass variables and other information around between different components. An example of how this looks
 
-  <template>
-    <camera>
-     name="Sony A7"
-     img="../sony-A7.jpg"
-    </camera>
-  </template>
+  props: {project: {type: Project, required: true} }
 
 10. What is the Vue method used to create watchable objects such as `state` or `AppState`?
 
