@@ -85,7 +85,7 @@ const filterBy = ('')
 Props: {id: {type: String, required: true} showButton }
 
 4. put the modalWrapper in the navBar
-    Use template # to brin them in 
+    Use template # to bring them in 
 
 5. Created an albumForm component
 
@@ -172,6 +172,75 @@ this one goes into the collaborator service
 .delete('/collaboratorId', this.removeCollaborator)
 
 this one goes into the collaborator service
+
+7. now in the album.js we created a 
+AlbumSchema.virtual('memberCount', {
+    localField: '_id',
+    foreignField: 'albumId',
+    ref: 'Collaborator'
+    count: true
+})
+
+
+9. now in the album service
+we are going to bring in memberCount
+
+10. in the collaborator service
+in the getCollaborationByAccount
+.populate({path: 'album', populate: {path: 'creator memberCount'} })
+
+commited for the server side 
+
+
+
+now we are going into the client side once again 
+
+1. Adding the member count into the album card
+
+2. now in the Home page we are creating async getMyCollaboratorsf
+which is going into the accountService
+
+3. now in the authService we are going to insert
+accountService.getMyCollaborations 
+
+4. In the AppState created 
+myCollaborations
+
+5. created a new collaborator model
+
+6. in the home page 
+in the return
+add for the myCollaborations
+
+7. in the album card
+in the props we add 
+|| object
+
+
+8. in the album details page
+created a getCollaborationByAlbumById
+and this will go into the albumsService
+in the appstate we created an activeAlbumCollaborators
+
+9. in the collaborator model we fixed the this.album
+this.album = data.album
+
+10. back to the album detail page
+created stub collab button 
+in the return we create a createCollab
+made a collaborationService
+
+we also created a
+let collabData = {albumId: route.params.albumId}
+
+
+in the return we add 'isCollaborator: computed'
+added a v-if with the @cick="createCollab"
+and also created a v-else to remove collab 
+
+11. created a removeCollab in the return 
+
+add a disable so the user will not be able to click on it multiple times
 
 
 
