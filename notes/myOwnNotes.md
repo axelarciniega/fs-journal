@@ -245,6 +245,79 @@ add a disable so the user will not be able to click on it multiple times
 
 
 
+<!-- STUB 10/4 -->
+
+Post Man Test
+
+created a new collection
+
+created a variable called endpoint
+
+then created a new folder called cars
+
+from there created a post/ create car
+
+make sure to login and get the token 
+
+UNDER test-
+const res = pm.response
+const body = res.json
+
+
+pm.test('Request was a good one', ()=> {
+const goodOne = res.code == 200
+pm.expect(goodOne).to.be.true('was not a good one')
+})}
+
+
+pm.test('Car was created as expected', () => {
+    pm.expect(body.make).to.be.eql('toya', make of the car was so strong)
+})
+
+pm.expect(body.creatorId).to.not.be.undefined
+pm.expect(body.creator).to.be.an.instanceOf(object, 'it was not an object')
+
+
+going over getting car by id
+
+const res = pm.response
+const car = res.json()
+const createCar = pm.variables.get('new Car')
+
+pm.test('got the right car', ()=> {
+    pm.expect(car.id).to.be.eql
+    (carId here, 'you got the wrong car')
+})
+
+
+let carData = {
+    make, model and all that would go in here
+    "make": "chevy"
+}
+
+let config = {
+    url:  `${pm.variables.get('endpoint')}/api/cars`
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+        Authorization: 'Bearer' + pm.variablels.get
+        ('auth')
+    },
+    body: JSON.stringify({
+        model: 'raw',
+        ...carData
+
+    })
+}
+
+pm.sendRequest(config, (error, response) => )
+    const newCar = response.json()
+    console.log('its a new car')
+
+    pm.variables.set('newCar' , newCar)
+    pm.variables.set('carId' , newCarId)
+
+
 
 
 
