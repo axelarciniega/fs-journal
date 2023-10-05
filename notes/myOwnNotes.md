@@ -318,6 +318,120 @@ pm.sendRequest(config, (error, response) => )
     pm.variables.set('carId' , newCarId)
 
 
+    <!-- STUB 10/5 -->
+Vue tour
+
+1. open up terminal and make sure we are cd in client 
+npm install vue3-tour
+
+go to main.js
+import 'vue3Tour' from 'vue3-tour'
+import 'vue3-tour/dist/vue3-tour.css'
+.use(Vue3Tour)
+
+2. In the home page in the template
+making a 
+<v-tour>
+
+</v-tour>
+
+in the return section
+steps: [
+    {
+    target: '#v-step-0'
+    header: {title: 'HEY HEY'},
+    content: 'here is our super cool thing',
+    actions: {next: '<button>Hey</button>'},
+    params: {placement:  'top'}
+    },
+    {
+        target: '#vue-step-1',
+        header: title: 'view an album'
+
+    }
+]
+
+
+tourCallBacks: {
+    onFinish: (()=> {
+        router.push({name: 'Album Details', params: {{albumId: AppState.albums[0].id }} })
+    })
+}
+
+back to v-tour
+<v-tour name='v-tour' :steps="steps" :callbacks="tourCallBacks">
+
+</v-tour>
+
+3. selecting a section within the template  we are going to add an add or a class
+id="v-step-0"
+
+5. inside the script tag
+lowest point
+mounted: function(){
+    this.$tours['myTour'].start()
+}
+
+6. threw another id on another section
+id="vue-step-1"
+
+7. making a new component called tour.vue
+in the new component 
+
+<v-tour :setps="steps"  :callBacks="tourCallBacks">
+
+</v-tour>
+
+props: {
+    steps: {type: Array, required: true},
+    callBacks: {type: Object}
+}
+
+below return but still in the script tag
+mounted:function(){
+    this.$tours['myTour'].start
+}
+
+
+you can use this component on a different page 
+
+
+now in the backend
+8. in the acoount model
+needsTour: {type: Boolean, default: true}
+
+9. write down a .put('', this.updateAccount) in account controller 
+
+
+going back to front end
+10. account service in the front end 
+async editAccount
+
+11. make a tourCallBacks in the page with the component and make sure to call in our props
+
+12. update the front end model
+needTour
+
+13. in the edit account make to sure update it to the Appstate
+
+<tour v-if="account.needsTour"></tour>
+
+make sure to update the first one we did
+
+on the home page below the onFinish
+onSkip: (async () => {
+    await accountService.editAccount({needsTour: false})
+})
+
+
+14. in the account service
+in the sanitizeBody
+add
+needsTour: body.needsTour
+15. 
+1   
+
+
 
 
 
