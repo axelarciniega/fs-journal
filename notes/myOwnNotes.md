@@ -429,7 +429,41 @@ in the sanitizeBody
 add
 needsTour: body.needsTour
 15. 
-1   
+
+
+
+
+
+<!-- STUB 10/6 -->
+SOCKETS
+
+in the env file switch it true
+after this check the console to see if it worked
+
+new tab called ws which stands for web socket, green is messages we are sending and red is the messages that the server is sending
+
+1. In the home page
+we are adding a button
+<button @click="testSocket"></button>
+
+now in the return
+
+testSocket(){
+    socketService.emit('SOCKET_TEST') //NOTE chekc the service to see what goes in the quotes in the .on('')
+}
+
+
+2. in the service
+this.socket.emit('IS_TESTED', 'anything here ', )
+
+3. om socketService
+.on(USER_LOGGED_IN,  this.onUserLogin)
+
+onUserLogin(payload){
+Pop.toast(payload.name + "logged in")
+}
+4. 
+
 
 
 
