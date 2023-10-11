@@ -195,3 +195,150 @@ public class CatsController : ControllerBase{
 
     void is for when you have no return //NOTE 
 
+
+
+<!-- STUB 10/10 -->
+
+in the dbsetup.sql
+
+//NOTE when you change something  in the table drop it and execute it again 
+CREATE TABLE hotdogs(
+
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(500),
+    imgUrl VARCHAR(500),
+    bun VARCHAR(500), 
+    dig VARCHAR(500),
+    hasKetchup BOOLEAN, 
+    hasMustard BOOLEAN,
+    description VARCHAR(1000),
+    expirationDate DATETIME DEFAULT CURRENT_TIMESTAMP,
+    price DOUBLE, 
+);
+
+
+INSERT INTO hotdogs
+(name, imgUrl, bun, dog, hasKetchup, hasMustard, description, price)
+VALUES
+('Huge Dog', 'https://unsplash', 'Huge Toasted Whole Wheat', 'Kosher Veggie', true, false, 'Hugeee', 45); 
+('Danger Dog', 'https://unsplash', 'Extra spicey jalapeno', 'Extra spicey chorizo', false, false, 'This one is danger', 55); 
+
+SELECT * FROM hotdogs; //NOTE star is asking for all the data or columns that exist
+SELECT name, price FROM hotdogs FROM hotdogs WHERE `hasKetchup` = true;  AND price < 50
+SELECT name WHERE description LIKE = '%chorizo%' //NOTE anything can come before after with the percent
+SELECT name FROM hotdogs ORDER BY price
+SELECT * FROM hotdogs WHERE id = 1 
+
+SELECT 
+name,
+price
+FROM hotdogs
+Where price < 30
+ORDER BY price 
+
+<!-- MySQL TUTORIAL to help with errors -->
+
+DELETE FROM hotdogs; //NOTE deletes all of them 
+DELETE FROM hotdogs WHERE id = 3
+DELETE FROM hotdogs ORDER BY price DESC LIMIT 1;
+
+UPDATE hotdogs
+SET price = 20 
+WHERE id = 1;
+
+UPDATE hotdogs
+SET price = price /2
+WHERE price > 5;
+
+<!-- STUB start of gregList -->
+
+CREATE TABLE cars(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    make ENUM('toya', 'bww', 'goblin-car') NOT NULL COMMENT "these are cool",
+    model VARCHAR(255) NOT NULL,
+    imgUrl VARCHAR(500) DEFAULT 'https://unsplash',
+    price INT NOT NULL,
+    year INT NOT NULL,
+    description VARCHAR(1000),
+    isNew BOOLEAN DEFAULT false
+)default charset utf8mb4 COMMENT '';
+
+INSERT INTO cars
+(make, model, year, price, isNew)
+VALUES
+('toya', 'yoda', 1998, 4000, false);
+INSERT INTO cars
+(make, model, year, price, isNew)
+VALUES
+('sub', 'wrx', 2011, 2000, true);
+
+SELECT * FROM cars; 
+
+
+fill out the appsettings.Development.JSON
+server=SG-CodeWorks-7891-mysql-master.servers.mongodirector.com;database=codeworking;port=3306;user id=sgroot;password=Ee24jLbm1XDfkW-f;
+
+creating car model 
+namespace server.Models
+public class Car
+{
+    prop int Id {get; set;}
+    public string Make
+    public string Model
+    public int? year 
+    public int price  
+}
+
+creating a new car controller right click it
+[ApiController]
+[Route("api/[controller]")]
+
+public class CarsController : ControllerBase
+{
+private readonly CarsService carsService;
+
+public CarsController(CarsService carsService)
+
+    [HttpGet]
+    public ActionResult
+
+
+}
+
+
+creating a car service right into class
+
+public class CarsService{
+    private readonly CarsRepository _repo
+
+
+
+
+
+
+
+}
+
+
+DO NOT to add the scopes in the startup.cs
+
+creating a car repository 
+
+public class CarsRepository
+{
+    private readonly IDbConnection _db;
+
+    Public CarsRepository(IDbConnection db){
+        _db = db;
+    }
+
+internal List<Cat> GetAllCars()
+{
+    string sql = "SELECT * FROM cars;";
+    List<Car> cars = _db.Query<Car>(sql).ToList();
+    return cars; 
+}
+
+
+
+}
