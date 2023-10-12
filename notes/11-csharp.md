@@ -338,7 +338,123 @@ internal List<Cat> GetAllCars()
     List<Car> cars = _db.Query<Car>(sql).ToList();
     return cars; 
 }
-
-
-
 }
+
+
+<!-- STUB 10/11 -->
+in the appsettings.Development.json
+DO NOT forget to fill out and in the client side 
+the auth will be same from mongo
+baseurl: https://localhost:7045
+
+1. going into the dbsetup.sql
+
+CREATE TABLE IF NOT EXISTS albums(
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    category VARCHAR(100) NOT NULL,
+    title VARCHAR(225) NOT NULL,
+    ccoverImg VARCHAR(500) NOT NULL,
+    archived TINYINT DEFAULT 0,
+    creatorId VARCHAR (255) NOT NULL,
+    FOREIGN KEY (creatorId) REFERENCES accounts(id) ON DELETE CASCADE
+)
+
+INSET INTO albums(category, title, coverImg, creatorId)
+VALUES
+('sport','Ping Pong Tournament','https://images.unsplash', '(creatorId here)')
+
+
+
+SELECT * from albums JOIN accounts;
+
+SELECT * FROM albums alb JOIN accounts act ON act.id = alb.creatorId 
+
+
+
+//NOTE if you see NEAR in error typically look at the line before
+
+
+2. created a album model
+
+type in prop and it will start a template 
+
+3. created a album repository first
+
+4. created a album service 
+
+5. created a album controller 
+
+//NOTE after you created these you should fill in your startup
+
+6. in the controller
+
+[HttpGet]
+public ActionResult<List<Album>> Get()
+{}
+
+7. now in the service
+internal List<Album> get()
+{}
+
+8. now in the repository
+internal List<Album> get()
+{
+    string sql = @"
+    
+    ;";
+    //NOTE @ lets you use multiple lines
+}
+
+9. fixing the model so it can bring the account information =
+public Account Creator (get; set;)
+
+10. back to the repository 
+adding to the Get
+
+
+11. back to the controller 
+[HttpPost]
+
+
+12. now in the service
+internal Album Create(Album albumData)
+{}
+
+13. now in the repository 
+internal Album Create(Album albumData)
+{}
+
+
+14. back to the controller
+private readonly Auth0Provider _auth0;
+ctrl . and click add parameters to add to constructor
+
+Add in task before action result and async before the task 
+
+Account userinfo = await_auth0.GetUserInfoAsync<Account>(HttpContext);
+albumData.CreatorId = userInfo.Id;
+
+15. back to the repository 
+updating the Create
+
+16. Now in the controller 
+above the HttPost 
+[Authorize]
+
+next
+[HttpGet("{ablumId}")]
+
+17. now in the 22service
+bringing it in
+
+18. in the repository now 
+bringing in the get by id
+
+19. back in the controller 
+[Authorize]
+[HttpDelete("{albumId}")]
+
+20. Now going into the service to add the delete
+
+21. now in the repository 
+_repo.Edit(album;)  //NOTE this makes sure that the database is also changes
