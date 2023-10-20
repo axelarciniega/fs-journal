@@ -458,3 +458,114 @@ bringing in the get by id
 
 21. now in the repository 
 _repo.Edit(album;)  //NOTE this makes sure that the database is also changes
+
+
+<!-- STUB 10/12 -->
+started in the dbsetup.sql
+1. creating a new table 
+CREATE TABLE pictures()
+added 
+ONE DELETE CASCADE //NOTE this allow you to delete without errors
+
+created a 
+INSERT INTO pictures(imgUrl, creatorId, albumId)
+VALUES("https://", "actual creatorId", "actual albumId")
+
+2. creating a picture model 
+
+3. creating all the files that we are going to need, pictures repository, picture service, and picture controller 
+
+4. in the controller we are creating a post request
+[Authorize]
+[HttpPost]
+
+5. pushed it in the service and the repository 
+
+6. now in the ALBUM controller 
+//NOTE by looking at the end point on postman you can see where we need to insert it 
+[HttpGet("{albumId}/pictures")]
+
+bring the picture service so we can call it in the picture service 
+
+7. now in the picture service we are bringing it in
+
+8. Now in the picture repository we bring it in 
+
+9. back to the dbsetup.sql
+CREATE TABLE IF NOT EXISTS collaborators()
+
+creating a
+INSERT INTO collaborators()
+
+10. creating a collaborator model 
+
+11. creating files that we need, collaborators repository, collaborators service and collaborators controller
+
+12. now in the collaborator controller we are creating a post
+
+[Authorize]
+[HttpPost]
+
+13. bringing it in the collaborators service
+
+14. bringing it in the repository
+
+
+15. Going into the account model !
+
+public class AccountCollaboratorViewModel : Account
+{
+    public int CollaboratorId {get; set;}
+}
+
+16. Going into our albums controller 
+[HttpGet("{albumId}/collaborators")]
+public ActionResult<list<AccountCollaboratorViewModel>> GetCollabsByAccount()
+{}
+
+//NOTE add in your collab service
+
+17. now entering the collab service
+
+
+18. now entering the collab repository
+
+
+19. in the collaborator model 
+public class AlbumCollaboratorViewModel : Album
+{
+    public in CollaboratorId {get; set;}
+    public string AccountId {get; set;}
+}
+
+20. Now going into the account controller 
+[Authorize]
+[HttpGet("collaborators")]
+
+//NOTE make sure to add in your collab service
+
+21. heading over to the collaborators service to bring it in
+
+22. now going into the collaborator repository 
+
+
+23. in the collaborator controller 
+[Authorize]
+[HttpDelete("{collabId}")]
+
+24. bring it in the collaborator service 
+
+25. bring it in the collaborator repository 
+
+
+<!-- STUB 10/16 -->
+
+
+<script setup>
+    //NOTE bringing in setup allows you to take the setup and return out in vue.
+</script>
+
+good reference for a modal is vueflix 
+
+
+
